@@ -2,6 +2,7 @@
     "name": "App Hider",
     "description": "Hide apps in GNOME overview",
     "uuid": "app-hider@lynith.dev",
+    "version": "1.0.0",
     "shell-version": [
         "42",
         "43",
