@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="dev.lynith.gnome.app-hider" path="/dev/lynith/gnome/app-hider/">
+    <!-- See also: https://docs.gtk.org/glib/gvariant-format-strings.html -->
+    <key name="hidden-apps" type="as">
+        <default>[]</default>
+        <summary>Hidden apps</summary>
+        <description>Apps that are hidden</description>
+    </key>
+  </schema>
+</schemalist>

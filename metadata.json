@@ -1,0 +1,9 @@
+{
+  "name": "App Hider",
+  "description": "Hide apps in GNOME overview",
+  "uuid": "me@lynith.dev",
+  "shell-version": [
+      "43",
+      "44"
+  ]
+}
