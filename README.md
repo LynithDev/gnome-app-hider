@@ -22,6 +22,6 @@ To hide an app, simply go to the apps menu and right click on an icon. There sho
 To unhide an app, go to the extension's options and remove any entries from the list.
 
 ## License
-This project is licensed with GPLv3.
+This project is licensed with GPLv2.
 
 Click [here](./LICENSE) to see the full license.
