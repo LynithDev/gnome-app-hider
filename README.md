@@ -1,4 +1,5 @@
 <div align="center">
+  <img src="https://raw.githubusercontent.com/LynithDev/gnome-app-hider/master/.github/ghost_nobg.png" width="128">
   <h1>GNOME App Hider</h1>
   <p><i>Ever wished of being able to hide any apps you didn't like in GNOME's app menu? Well wish no more, as this is the extension for you!</i>
 </div>
