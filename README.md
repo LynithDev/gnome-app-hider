@@ -3,10 +3,6 @@
   <p><i>Ever wished of being able to hide any apps you didn't like in GNOME's app menu? Well wish no more, as this is the extension for you!</i>
 </div>
 
-<video controls>
-  <source type="video/mp4" src="https://raw.githubusercontent.com/LynithDev/gnome-app-hider/master/.github/showcase.mp4">
-</video>
-
 ## Install
 1. Download this as a zip file
 2. Extract the zip
@@ -19,6 +15,7 @@ mv ./gnome-app-hider-master ~/.local/share/gnome-shell/extensions/app-hider@lyni
 5. Open the extensions app and enable it
 
 ## Usage
+![](https://raw.githubusercontent.com/LynithDev/gnome-app-hider/master/.github/showcase.mp4)
 To hide an app, simply go to the apps menu and right click on an icon. There should be an option to "hide" it
 
 To unhide an app, go to the extension's options and remove any entries from the list.
