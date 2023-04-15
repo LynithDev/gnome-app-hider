@@ -3,24 +3,14 @@ const { Adw, Gio, Gtk } = imports.gi;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 
-function init() {
-}
+function init() {}
 
-function buildPrefsWidget() {
-    const window = new Gtk.Box({
-        orientation: Gtk.Orientation.VERTICAL,
-        border_width: 12,
-        spacing: 12,
-    });
-
-    fillPreferencesWindow(window);
-
-    window.show_all();
-    return window;
+function getNoAppsRow() {
+    return new Adw.ActionRow({ title: "No hidden apps" });
 }
 
 function fillPreferencesWindow(window) {
-    const settings = ExtensionUtils.getSettings("dev.lynith.gnome.app-hider");
+    const settings = ExtensionUtils.getSettings(Me.metadata["schema-id"]);
 
     const page = new Adw.PreferencesPage();
     const group = new Adw.PreferencesGroup();
@@ -29,10 +19,9 @@ function fillPreferencesWindow(window) {
     const hiddenApps = settings.get_strv("hidden-apps");
     
     if (hiddenApps.length === 0) {
-        const row = new Adw.ActionRow({ title: "No hidden apps" });
-        group.add(row);
+        group.add(getNoAppsRow());
     } else {
-        hiddenApps.forEach(appId => {
+        for (const appId of hiddenApps) {
             const appInfo = Gio.DesktopAppInfo.new(appId);
 
             const row = new Adw.ActionRow({
@@ -40,26 +29,29 @@ function fillPreferencesWindow(window) {
                 title: appInfo.get_name(),
                 subtitle: appInfo.get_description(),
             });
-    
+
             const button = new Gtk.Button({
                 icon_name: "list-remove",
                 tooltip_text: "Unhide",
             });
-    
-            button.connect("clicked", () => {
+
+            button.connect("clicked", (self) => {
                 const index = hiddenApps.indexOf(appId);
                 if (index > -1) {
                     hiddenApps.splice(index, 1);
                 }
                 settings.set_strv("hidden-apps", hiddenApps);
                 group.remove(row);
+
+                if (hiddenApps.length === 0) {
+                    group.add(getNoAppsRow());
+                }
             });
-    
+
             row.add_suffix(button);
             group.add(row);
-        });
+        }
     }
 
     window.add(page);
-    
 }

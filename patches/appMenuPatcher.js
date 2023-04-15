@@ -1,12 +1,10 @@
 const { AppMenu } = imports.ui.appMenu;
 const PopupMenu = imports.ui.popupMenu;
-const ExtensionUtils = imports.misc.extensionUtils;
+const Me = imports.misc.extensionUtils.getCurrentExtension().imports.extension;
 const Main = imports.ui.main;
 
 var AppMenuPatcher = class AppMenuPatcher {
-    constructor() {
-
-    }
+    constructor() {}
 
     enable() {
         AppMenu.prototype._hider_isMenuItemAdded = false;
@@ -19,11 +17,10 @@ var AppMenuPatcher = class AppMenuPatcher {
             this._hider_isMenuItemAdded = true;
             this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
             this._hider_menuItem = this.addAction("Hide", () => {
-                const settings = ExtensionUtils.getSettings("dev.lynith.gnome.app-hider");
-                const hiddenApps = settings.get_strv("hidden-apps");
-
+                const hiddenApps = Me.settings.get_strv("hidden-apps");
                 hiddenApps.push(this._app.get_id());
-                settings.set_strv("hidden-apps", hiddenApps);
+                Me.settings.set_strv("hidden-apps", hiddenApps);
+
                 Main.overview._overview.controls.appDisplay._redisplay();
             });
 

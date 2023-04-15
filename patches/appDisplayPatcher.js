@@ -1,16 +1,15 @@
 const { BaseAppView } = imports.ui.appDisplay;
-const ExtensionUtils = imports.misc.extensionUtils;
 const Main = imports.ui.main;
 
+const Me = imports.misc.extensionUtils.getCurrentExtension().imports.extension;
+
 var AppDisplayPatcher = class AppDisplayPatcher {
-    constructor() {
-        
-    }
+    constructor() {}
 
     _patchAppView() {
         BaseAppView.prototype._hider_originalRedisplay = BaseAppView.prototype._redisplay;
         BaseAppView.prototype._redisplay = function() {
-            this.hiddenApps = ExtensionUtils.getSettings("dev.lynith.gnome.app-hider").get_strv("hidden-apps");
+            this.hiddenApps = Me.settings.get_strv("hidden-apps");
 
             let oldApps = this._orderedItems.slice();
             let oldAppIds = oldApps.map(icon => icon.id);
