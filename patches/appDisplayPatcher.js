@@ -1,21 +1,22 @@
 const { BaseAppView } = imports.ui.appDisplay;
 const Main = imports.ui.main;
 
-const Me = imports.misc.extensionUtils.getCurrentExtension().imports.extension;
-
 var AppDisplayPatcher = class AppDisplayPatcher {
-    constructor() {}
+    constructor(settings) {
+        this.settings = settings;
+    }
 
     _patchAppView() {
         BaseAppView.prototype._hider_originalRedisplay = BaseAppView.prototype._redisplay;
-        BaseAppView.prototype._redisplay = function() {
-            this.hiddenApps = Me.settings.get_strv("hidden-apps");
+        let SETTINGS = this.settings;
 
+        BaseAppView.prototype._redisplay = function() {
+            this.hiddenApps = SETTINGS.get_strv("hidden-apps");
             let oldApps = this._orderedItems.slice();
             let oldAppIds = oldApps.map(icon => icon.id);
     
             // Filter out hidden apps
-            let newApps = this._loadApps().sort(this._compareItems.bind(this)).filter(icon => !this.hiddenApps.includes(icon.id));
+            let newApps = this._loadApps().filter(icon => !this.hiddenApps.includes(icon.id)).sort(this._compareItems.bind(this));
             let newAppIds = newApps.map(icon => icon.id);
     
             let addedApps = newApps.filter(icon => !oldAppIds.includes(icon.id));
