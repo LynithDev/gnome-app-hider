@@ -5,6 +5,7 @@
 </div>
 
 ## Install
+You can download it through [GNOME's extension website](https://extensions.gnome.org/extension/5895/app-hider/) or follow the list below
 1. Download this as a zip file
 2. Extract the zip
 3. Next, you have to move it to `~/.local/share/gnome-shell/extensions/`
