@@ -10,7 +10,7 @@ function getNoAppsRow() {
 }
 
 function fillPreferencesWindow(window) {
-    const settings = ExtensionUtils.getSettings(Me.metadata["schema-id"]);
+    const settings = ExtensionUtils.getSettings();
 
     const page = new Adw.PreferencesPage();
     const group = new Adw.PreferencesGroup();
@@ -25,7 +25,7 @@ function fillPreferencesWindow(window) {
             const appInfo = Gio.DesktopAppInfo.new(appId);
 
             const row = new Adw.ActionRow({
-                icon_name: appInfo.get_icon().to_string(),
+                icon_name: appInfo.get_icon().to_string() || "application-x-executable",
                 title: appInfo.get_name(),
                 subtitle: appInfo.get_description(),
             });

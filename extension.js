@@ -6,12 +6,10 @@ const { AppMenuPatcher } = Me.imports.patches.appMenuPatcher;
 const { AppDisplayPatcher } = Me.imports.patches.appDisplayPatcher;
 
 var GnomeAppHiderExtension = class Extension {
-    constructor(id) {
-        this._id = id;
-    }
+    constructor() {}
     
     enable() {
-        this.settings = ExtensionUtils.getSettings(this._id);
+        this.settings = ExtensionUtils.getSettings();
 
         this.settings.connect("changed::hidden-apps", () => {
             Main.overview._overview.controls.appDisplay._redisplay();
@@ -35,5 +33,5 @@ var GnomeAppHiderExtension = class Extension {
 }
 
 function init() {
-    return new GnomeAppHiderExtension(Me.metadata["schema-id"]);
+    return new GnomeAppHiderExtension();
 }

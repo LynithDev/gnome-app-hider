@@ -21,11 +21,12 @@ var AppMenuPatcher = class AppMenuPatcher {
             this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
             this._hider_menuItem = this.addAction("Hide", () => {
                 const hiddenApps = SETTINGS.get_strv("hidden-apps");
+                if (hiddenApps.includes(this._app.get_id())) { return; }
                 hiddenApps.push(this._app.get_id());
                 SETTINGS.set_strv("hidden-apps", hiddenApps);
             });
 
-            this._hider_updateDetailsVisibility.call(this);
+            this._hider_updateDetailsVisibility(this);
         }
 
         Main.overview._overview.controls.appDisplay._redisplay();
