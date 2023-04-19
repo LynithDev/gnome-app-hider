@@ -23,9 +23,10 @@ function fillPreferencesWindow(window) {
     } else {
         for (const appId of hiddenApps) {
             const appInfo = Gio.DesktopAppInfo.new(appId);
+            const appIcon = appInfo.get_icon() == null ? "application-x-executable" : appInfo.get_icon();
 
             const row = new Adw.ActionRow({
-                icon_name: appInfo.get_icon().to_string() || "application-x-executable",
+                icon_name: appIcon,
                 title: appInfo.get_name(),
                 subtitle: appInfo.get_description(),
             });
