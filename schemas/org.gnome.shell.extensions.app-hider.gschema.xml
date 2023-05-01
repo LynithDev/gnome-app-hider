@@ -6,5 +6,10 @@
         <summary>Hidden apps</summary>
         <description>Apps that are hidden</description>
     </key>
+    <key name="hidden-search-apps" type="as">
+        <default>[]</default>
+        <summary>Hidden search apps</summary>
+        <description>Apps that are hidden from search</description>
+    </key>
   </schema>
 </schemalist>

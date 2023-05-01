@@ -17,6 +17,7 @@ function fillPreferencesWindow(window) {
     page.add(group);
 
     const hiddenApps = settings.get_strv("hidden-apps");
+    let hiddenSearchApps = settings.get_strv("hidden-search-apps");
     
     if (hiddenApps.length === 0) {
         group.add(getNoAppsRow());
@@ -32,7 +33,7 @@ function fillPreferencesWindow(window) {
             });
 
             const button = new Gtk.Button({
-                icon_name: "list-remove",
+                icon_name: "edit-delete-symbolic",
                 tooltip_text: "Unhide",
             });
 
@@ -48,8 +49,37 @@ function fillPreferencesWindow(window) {
                     group.add(getNoAppsRow());
                 }
             });
+            
+            const hideSearchButton = new Gtk.Button({
+                icon_name: hiddenSearchApps.includes(appId) ? "edit-clear-symbolic" : "system-search-symbolic",
+                tooltip_text: hiddenSearchApps.includes(appId) ? "Unhide from search" : "Hide from search",
+            });
 
-            row.add_suffix(button);
+            hideSearchButton.connect("clicked", (self) => {
+                const index = hiddenSearchApps.indexOf(appId);
+                if (index > -1) {
+                    hiddenSearchApps.splice(index, 1);
+                } else {
+                    hiddenSearchApps.push(appId);
+                }
+
+                settings.set_strv("hidden-search-apps", hiddenSearchApps);
+                hideSearchButton.set_icon_name(hiddenSearchApps.includes(appId) ? "edit-clear-symbolic" : "system-search-symbolic");
+                hideSearchButton.set_tooltip_text(hiddenSearchApps.includes(appId) ? "Unhide from search" : "Hide from search");
+            });
+
+            const buttonBox = new Gtk.Box({
+                orientation: Gtk.Orientation.HORIZONTAL,
+                spacing: 6,
+                margin_top: 8,
+                margin_bottom: 8,
+            });
+
+            buttonBox.append(hideSearchButton);
+            buttonBox.append(button);
+
+            row.add_suffix(buttonBox);
+            
             group.add(row);
         }
     }
