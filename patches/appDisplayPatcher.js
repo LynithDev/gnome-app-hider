@@ -1,6 +1,5 @@
 const { BaseAppView, AppDisplay, FolderView, AppSearchProvider } = imports.ui.appDisplay;
 const Main = imports.ui.main;
-const { Shell } = imports.gi;
 
 var AppDisplayPatcher = class AppDisplayPatcher {
     constructor(settings) {
