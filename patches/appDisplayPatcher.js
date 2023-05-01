@@ -1,9 +1,32 @@
-const { BaseAppView, AppDisplay, FolderView } = imports.ui.appDisplay;
+const { BaseAppView, AppDisplay, FolderView, AppSearchProvider } = imports.ui.appDisplay;
 const Main = imports.ui.main;
 
 var AppDisplayPatcher = class AppDisplayPatcher {
     constructor(settings) {
         this.settings = settings;
+    }
+
+    _patchAppSearchProvider() {
+        AppSearchProvider.prototype._original_getInitialResultSet = AppSearchProvider.prototype.getInitialResultSet;
+
+        let SETTINGS = this.settings;
+        AppSearchProvider.prototype.getInitialResultSet = async function(terms, cancellable) {
+            try {
+                let resultSet = await this._original_getInitialResultSet(terms, cancellable);
+
+                let hiddenSearchApps = SETTINGS.get_strv("hidden-search-apps");
+                resultSet = resultSet.filter(app => !hiddenSearchApps.includes(app));
+
+                return new Promise((resolve) => resolve(resultSet));
+            } catch (e) {
+                return this._original_getInitialResultSet(terms, cancellable);
+            }
+        }
+    }
+
+    _unpatchAppSearchProvider() {
+        AppSearchProvider.prototype.getInitialResultSet = AppSearchProvider.prototype._original_getInitialResultSet;
+        delete AppSearchProvider.prototype._original_getInitialResultSet;
     }
 
     _patchAppView() {
@@ -35,10 +58,12 @@ var AppDisplayPatcher = class AppDisplayPatcher {
     }
 
     enable() {
+        this._patchAppSearchProvider();
         this._patchAppView();
     }
 
     disable() {
+        this._unpatchAppSearchProvider();
         this._unpatchAppView();
     }
 }
