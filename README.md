@@ -22,6 +22,18 @@ To hide an app, simply go to the apps menu and right click on an icon. There sho
 
 To unhide an app, go to the extension's options and remove any entries from the list.
 
+## Packing the extension
+```
+gnome-extensions pack --podir=po --extra-source=patches
+```
+
+## Translations
+From the root project directory, run the following command to generate a `.pot` file for translators to use. You can edit this file with POEditor or any other translation software.
+
+```
+find . -iname "*.js" | xargs xgettext --from-code=UTF-8 --output=po/example.pot
+```
+
 ## License
 This project is licensed with GPLv2.
 

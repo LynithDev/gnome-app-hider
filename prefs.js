@@ -3,10 +3,15 @@ const { Adw, Gio, Gtk } = imports.gi;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 
-function init() {}
+const Domain = imports.gettext.domain(Me.metadata.uuid);
+const _ = Domain.gettext;
+
+function init() {
+    ExtensionUtils.initTranslations(Me.metadata.uuid);
+}
 
 function getNoAppsRow() {
-    return new Adw.ActionRow({ title: "No hidden apps" });
+    return new Adw.ActionRow({ title: _("No hidden apps") });
 }
 
 function fillPreferencesWindow(window) {
@@ -32,7 +37,7 @@ function fillPreferencesWindow(window) {
                 row = new Adw.ActionRow({
                     icon_name: "application-x-executable",
                     title: appId,
-                    subtitle: "Missing app info",
+                    subtitle: _("Missing app info"),
                 });
             } else {
                 const appIcon = appInfo.get_icon() == null ? "application-x-executable" : appInfo.get_icon().to_string();
@@ -46,7 +51,7 @@ function fillPreferencesWindow(window) {
 
             const button = new Gtk.Button({
                 icon_name: "edit-delete-symbolic",
-                tooltip_text: "Unhide",
+                tooltip_text: _("Unhide"),
             });
 
             button.connect("clicked", (self) => {
@@ -64,7 +69,7 @@ function fillPreferencesWindow(window) {
             
             const hideSearchButton = new Gtk.Button({
                 icon_name: hiddenSearchApps.includes(appId) ? "edit-clear-symbolic" : "system-search-symbolic",
-                tooltip_text: hiddenSearchApps.includes(appId) ? "Unhide from search" : "Hide from search",
+                tooltip_text: (hiddenSearchApps.includes(appId) ? _("Unhide") : _("Hide")) + " from search",
             });
 
             hideSearchButton.connect("clicked", (self) => {
@@ -77,7 +82,7 @@ function fillPreferencesWindow(window) {
 
                 settings.set_strv("hidden-search-apps", hiddenSearchApps);
                 hideSearchButton.set_icon_name(hiddenSearchApps.includes(appId) ? "edit-clear-symbolic" : "system-search-symbolic");
-                hideSearchButton.set_tooltip_text(hiddenSearchApps.includes(appId) ? "Unhide from search" : "Hide from search");
+                hideSearchButton.set_tooltip_text((hiddenSearchApps.includes(appId) ? _("Unhide") : _("Hide")) + " from search");
             });
 
             const buttonBox = new Gtk.Box({
