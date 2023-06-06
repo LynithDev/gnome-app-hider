@@ -1,7 +1,7 @@
 {
     "name": "App Hider",
     "description": "Hide apps in GNOME's app menu",
-    "uuid": "app-hider-dev@lynith.dev",
+    "uuid": "app-hider@lynith.dev",
     "settings-schema": "org.gnome.shell.extensions.app-hider",
     "version": 8,
     "url": "https://github.com/LynithDev/gnome-app-hider",
