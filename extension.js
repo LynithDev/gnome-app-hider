@@ -33,5 +33,7 @@ var GnomeAppHiderExtension = class Extension {
 }
 
 function init() {
+    ExtensionUtils.initTranslations(Me.metadata.uuid);
+
     return new GnomeAppHiderExtension();
 }

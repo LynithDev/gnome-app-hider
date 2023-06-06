@@ -2,6 +2,9 @@ const { AppMenu } = imports.ui.appMenu;
 const PopupMenu = imports.ui.popupMenu;
 const Main = imports.ui.main;
 
+const Me = imports.misc.extensionUtils.getCurrentExtension();
+const Domain = imports.gettext.domain(Me.metadata.uuid);
+
 var AppMenuPatcher = class AppMenuPatcher {
     constructor(settings) {
         this.settings = settings;
@@ -12,6 +15,7 @@ var AppMenuPatcher = class AppMenuPatcher {
         AppMenu.prototype._hider_updateDetailsVisibility = AppMenu.prototype._updateDetailsVisibility;
         
         let SETTINGS = this.settings;
+        const _ = Domain.gettext;
         AppMenu.prototype._updateDetailsVisibility = function() {
             if (this._hider_isMenuItemAdded) {
                 return;
@@ -19,7 +23,7 @@ var AppMenuPatcher = class AppMenuPatcher {
             
             this._hider_isMenuItemAdded = true;
             this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-            this._hider_menuItem = this.addAction("Hide", () => {
+            this._hider_menuItem = this.addAction(_("Hide"), () => { // WHY IS THIS NOT TRANSLATING???
                 const hiddenApps = SETTINGS.get_strv("hidden-apps");
                 if (hiddenApps.includes(this._app.get_id())) { return; }
                 hiddenApps.push(this._app.get_id());
