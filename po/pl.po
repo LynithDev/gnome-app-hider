@@ -17,19 +17,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: patches/appMenuPatcher.js:26 prefs.js:72 prefs.js:85
 msgid "Hide"
 msgstr "Ukryj"
 
-#: prefs.js:14
 msgid "No hidden apps"
 msgstr "Brak ukrytych aplikacji"
 
-#: prefs.js:40
 msgid "Missing app info"
 msgstr "Brak informacji o aplikacji"
 
-#: prefs.js:54 prefs.js:72 prefs.js:85
 msgid "Unhide"
 msgstr "Pokaż"
 
+msgid "Unhide from search"
+msgstr "Pokaż w wyszukiwanych"
+
+msgid "Hide from search"
+msgstr "Ukryj w wyszukiwanych"

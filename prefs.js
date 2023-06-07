@@ -66,10 +66,12 @@ function fillPreferencesWindow(window) {
                     group.add(getNoAppsRow());
                 }
             });
+
+            const tooltip_text = hiddenSearchApps.includes(appId) ? _("Unhide from search") : _("Hide from search");
             
             const hideSearchButton = new Gtk.Button({
                 icon_name: hiddenSearchApps.includes(appId) ? "edit-clear-symbolic" : "system-search-symbolic",
-                tooltip_text: (hiddenSearchApps.includes(appId) ? _("Unhide") : _("Hide")) + " from search",
+                tooltip_text,
             });
 
             hideSearchButton.connect("clicked", (self) => {
@@ -82,7 +84,7 @@ function fillPreferencesWindow(window) {
 
                 settings.set_strv("hidden-search-apps", hiddenSearchApps);
                 hideSearchButton.set_icon_name(hiddenSearchApps.includes(appId) ? "edit-clear-symbolic" : "system-search-symbolic");
-                hideSearchButton.set_tooltip_text((hiddenSearchApps.includes(appId) ? _("Unhide") : _("Hide")) + " from search");
+                hideSearchButton.set_tooltip_text(tooltip_text);
             });
 
             const buttonBox = new Gtk.Box({

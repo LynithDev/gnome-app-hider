@@ -18,18 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: patches/appMenuPatcher.js:26 prefs.js:72 prefs.js:85
 msgid "Hide"
 msgstr "Amagar"
 
-#: prefs.js:14
 msgid "No hidden apps"
 msgstr "Cap d’aplicacion pas amagada"
 
-#: prefs.js:40
 msgid "Missing app info"
 msgstr "Info d’aplicacion absentas"
 
-#: prefs.js:54 prefs.js:72 prefs.js:85
 msgid "Unhide"
 msgstr "Afichar"
+
+msgid "Unhide from search"
+msgstr "Unhide from search"
+
+msgid "Hide from search"
+msgstr "Hide from search"
