@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-06 20:16+0200\n"
+"PO-Revision-Date: 2023-06-07 20:32+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: patches/appMenuPatcher.js:26 prefs.js:72 prefs.js:85
+msgid "Hide"
+msgstr "Gizle"
+
+#: prefs.js:14
+msgid "No hidden apps"
+msgstr "Gizli uygulama yok"
+
+#: prefs.js:40
+msgid "Missing app info"
+msgstr "Uygulama bilgileri bulunamadı"
+
+#: prefs.js:54 prefs.js:72 prefs.js:85
+msgid "Unhide"
+msgstr "Gizlenmiş uygulamalardan kaldır"
+
+msgid "Unhide from search"
+msgstr "Aramadan gizlenmiş uygulamalardan kaldır"
+
+msgid "Hide from search"
+msgstr "Aramadan gizle"
