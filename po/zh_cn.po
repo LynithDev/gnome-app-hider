@@ -1,0 +1,36 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-06 20:16+0200\n"
+"PO-Revision-Date: 2023-06-06 21:03+0200\n"
+"Last-Translator: xiaozhangup\n"
+"Language-Team: \n"
+"Language: zh_cn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+
+msgid "Hide"
+msgstr "隐藏"
+
+msgid "No hidden apps"
+msgstr "没有隐藏的应用"
+
+msgid "Missing app info"
+msgstr "缺少应用信息"
+
+msgid "Unhide"
+msgstr "显示"
+
+msgid "Unhide from search"
+msgstr "从搜索中显示"
+
+msgid "Hide from search"
+msgstr "从搜索中隐藏"
