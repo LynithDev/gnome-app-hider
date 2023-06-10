@@ -5,6 +5,9 @@
     "settings-schema": "org.gnome.shell.extensions.app-hider",
     "version": 8,
     "url": "https://github.com/LynithDev/gnome-app-hider",
+    "donations": {
+        "kofi": "lynith"
+    },
     "shell-version": [
         "42",
         "43",
