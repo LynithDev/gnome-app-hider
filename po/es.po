@@ -1,0 +1,41 @@
+# Spanish translation file
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Adal Alom <arpia49@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-09 20:39+0200\n"
+"PO-Revision-Date: 2023-06-09 20:59+0200\n"
+"Last-Translator: Adal Alom <arpia49@gmail.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: prefs.js:14
+msgid "No hidden apps"
+msgstr "No hay aplicaciones ocultas"
+
+#: prefs.js:40
+msgid "Missing app info"
+msgstr "Falta información de la aplicación"
+
+#: prefs.js:54
+msgid "Unhide"
+msgstr "Mostrar"
+
+#: prefs.js:70
+msgid "Unhide from search"
+msgstr "Mostrar en la búsqueda"
+
+#: prefs.js:70
+msgid "Hide from search"
+msgstr "Ocultar en la búsqueda"
+
+#: patches/appMenuPatcher.js:26
+msgid "Hide"
+msgstr "Ocultar"
