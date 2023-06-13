@@ -31,7 +31,7 @@ msgid "Unhide"
 msgstr "Afichar"
 
 msgid "Unhide from search"
-msgstr "Unhide from search"
+msgstr "Afichar dins la recèrca"
 
 msgid "Hide from search"
-msgstr "Hide from search"
+msgstr "Amagar dins la recèrca"
