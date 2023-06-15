@@ -1,0 +1,39 @@
+# French translation file
+# This file is distributed under the same license as the PACKAGE package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-15 12:18+0200\n"
+"PO-Revision-Date: 2023-06-15 12:24+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: patches/appMenuPatcher.js:26
+msgid "Hide"
+msgstr "Masquer"
+
+#: prefs.js:14
+msgid "No hidden apps"
+msgstr "Aucune application masquée"
+
+#: prefs.js:40
+msgid "Missing app info"
+msgstr "Infos manquantes sur l’app"
+
+#: prefs.js:54
+msgid "Unhide"
+msgstr "Démasquer"
+
+#: prefs.js:70
+msgid "Unhide from search"
+msgstr "Démasquer de la recherche"
+
+#: prefs.js:70
+msgid "Hide from search"
+msgstr "Masquer de la recherche"
