@@ -34,14 +34,15 @@ var AppDisplayPatcher = class AppDisplayPatcher {
 
         AppDisplay.prototype._hider_originalLoadApps = AppDisplay.prototype._loadApps;
         AppDisplay.prototype._loadApps = function() {
-            let apps = this._hider_originalLoadApps();
-            return apps.filter(app => !SETTINGS.get_strv("hidden-apps").includes(app.id));
+            return this._hider_originalLoadApps().filter(app => !SETTINGS.get_strv("hidden-apps").includes(app.id));
         }
 
         FolderView.prototype._hider_originalLoadApps = FolderView.prototype._loadApps;
         FolderView.prototype._loadApps = function() {
-            let apps = this._hider_originalLoadApps();
-            return apps.filter(app => !SETTINGS.get_strv("hidden-apps").includes(app.id));
+            const filtered = this._hider_originalLoadApps().filter(app => !SETTINGS.get_strv("hidden-apps").includes(app.id));
+            this._apps = filtered;
+
+            return filtered;
         }
 
         Main.overview._overview.controls.appDisplay._redisplay();

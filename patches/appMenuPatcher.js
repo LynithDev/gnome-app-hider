@@ -23,7 +23,7 @@ var AppMenuPatcher = class AppMenuPatcher {
             
             this._hider_isMenuItemAdded = true;
             this.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-            this._hider_menuItem = this.addAction(_("Hide"), () => { // WHY IS THIS NOT TRANSLATING???
+            this._hider_menuItem = this.addAction(_("Hide"), () => {
                 const hiddenApps = SETTINGS.get_strv("hidden-apps");
                 if (hiddenApps.includes(this._app.get_id())) { return; }
                 hiddenApps.push(this._app.get_id());
