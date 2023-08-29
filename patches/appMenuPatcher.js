@@ -1,11 +1,10 @@
-const { AppMenu } = imports.ui.appMenu;
-const PopupMenu = imports.ui.popupMenu;
-const Main = imports.ui.main;
+import { AppMenu } from "resource:///org/gnome/shell/ui/appMenu.js";
+import * as PopupMenu from "resource:///org/gnome/shell/ui/popupMenu.js";
+import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
-const Me = imports.misc.extensionUtils.getCurrentExtension();
-const Domain = imports.gettext.domain(Me.metadata.uuid);
+import { gettext } from 'resource:///org/gnome/shell/extensions/extension.js';
 
-var AppMenuPatcher = class AppMenuPatcher {
+export class AppMenuPatcher {
     constructor(settings) {
         this.settings = settings;
     }
@@ -15,7 +14,7 @@ var AppMenuPatcher = class AppMenuPatcher {
         AppMenu.prototype._hider_updateDetailsVisibility = AppMenu.prototype._updateDetailsVisibility;
         
         let SETTINGS = this.settings;
-        const _ = Domain.gettext;
+        const _ = gettext;
         AppMenu.prototype._updateDetailsVisibility = function() {
             if (this._hider_isMenuItemAdded) {
                 return;
@@ -45,3 +44,5 @@ var AppMenuPatcher = class AppMenuPatcher {
         Main.overview._overview.controls.appDisplay._redisplay();
     }
 }
+
+export default AppMenuPatcher;

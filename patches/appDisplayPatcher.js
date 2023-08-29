@@ -1,7 +1,7 @@
-const { BaseAppView, AppDisplay, FolderView, AppSearchProvider } = imports.ui.appDisplay;
-const Main = imports.ui.main;
+import { AppDisplay, FolderView, AppSearchProvider } from "resource:///org/gnome/shell/ui/appDisplay.js";
+import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
-var AppDisplayPatcher = class AppDisplayPatcher {
+export class AppDisplayPatcher {
     constructor(settings) {
         this.settings = settings;
     }
@@ -68,3 +68,5 @@ var AppDisplayPatcher = class AppDisplayPatcher {
         this._unpatchAppView();
     }
 }
+
+export default AppDisplayPatcher;

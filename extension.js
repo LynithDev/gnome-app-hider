@@ -1,15 +1,13 @@
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const Main = imports.ui.main;
+import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
-const { AppMenuPatcher } = Me.imports.patches.appMenuPatcher;
-const { AppDisplayPatcher } = Me.imports.patches.appDisplayPatcher;
+import { AppMenuPatcher } from "./patches/appMenuPatcher.js";
+import { AppDisplayPatcher } from "./patches/appDisplayPatcher.js";
 
-var GnomeAppHiderExtension = class Extension {
-    constructor() {}
-    
+import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
+
+class GnomeAppHiderExtension extends Extension {
     enable() {
-        this.settings = ExtensionUtils.getSettings();
+        this.settings = this.getSettings();
 
         this.settings.connect("changed::hidden-apps", () => {
             Main.overview._overview.controls.appDisplay._redisplay();
@@ -32,8 +30,4 @@ var GnomeAppHiderExtension = class Extension {
     }
 }
 
-function init() {
-    ExtensionUtils.initTranslations(Me.metadata.uuid);
-
-    return new GnomeAppHiderExtension();
-}
+export default GnomeAppHiderExtension;
