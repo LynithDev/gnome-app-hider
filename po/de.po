@@ -1,0 +1,41 @@
+# German translation file
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pracium <pracium@proton.me>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-03 16:36+0200\n"
+"PO-Revision-Date: 2023-09-03 16:36+0200\n"
+"Last-Translator: Pracium <pracium@proton.me>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: prefs.js:14
+msgid "No hidden apps"
+msgstr "Keine verborgenen Apps"
+
+#: prefs.js:40
+msgid "Missing app info"
+msgstr "App Informationen unvollständig"
+
+#: prefs.js:54
+msgid "Unhide"
+msgstr "Verbergen"
+
+#: prefs.js:70
+msgid "Unhide from search"
+msgstr "In der Suche anzeigen"
+
+#: prefs.js:70
+msgid "Hide from search"
+msgstr "In der Suche verbergen"
+
+#: patches/appMenuPatcher.js:26
+msgid "Hide"
+msgstr "Verbergen"
