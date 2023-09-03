@@ -22,7 +22,7 @@ msgstr "Keine verborgenen Apps"
 
 #: prefs.js:40
 msgid "Missing app info"
-msgstr "App Informationen unvollständig"
+msgstr "Keine App Informationen vorhanden"
 
 #: prefs.js:54
 msgid "Unhide"
