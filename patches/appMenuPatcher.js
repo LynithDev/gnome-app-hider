@@ -16,6 +16,10 @@ export class AppMenuPatcher {
         let SETTINGS = this.settings;
         const _ = gettext;
         AppMenu.prototype._updateDetailsVisibility = function() {
+            if (this.sourceActor && !Object.keys(this.sourceActor).includes("_hider_displayPatchedMenu")) {
+                return;
+            }
+            
             if (this._hider_isMenuItemAdded) {
                 return;
             }
