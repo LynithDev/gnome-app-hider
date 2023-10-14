@@ -31,6 +31,7 @@ export class AppMenuPatcher {
                 if (hiddenApps.includes(this._app.get_id())) { return; }
                 hiddenApps.push(this._app.get_id());
                 SETTINGS.set_strv("hidden-apps", hiddenApps);
+                Main.overview._overview.controls.appDisplay._redisplay();
             });
 
             this._hider_updateDetailsVisibility(this);
