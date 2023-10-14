@@ -42,13 +42,10 @@ var AppDisplayPatcher = class AppDisplayPatcher {
 
         FolderView.prototype._hider_originalLoadApps = FolderView.prototype._loadApps;
         FolderView.prototype._loadApps = function() {
-            const filtered = this._hider_originalLoadApps().map((app) => {
+            return this._hider_originalLoadApps().map((app) => {
                 app._hider_displayPatchedMenu = true;
                 return app;
             }).filter(app => !SETTINGS.get_strv("hidden-apps").includes(app.id));
-            this._apps = filtered;
-
-            return filtered;
         }
 
         Main.overview._overview.controls.appDisplay._redisplay();
