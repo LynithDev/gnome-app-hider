@@ -25,7 +25,7 @@ msgstr "Informazioni applicazione mancanti"
 
 #: prefs.js:54
 msgid "Unhide"
-msgstr "Nascondi"
+msgstr "Mostra"
 
 #: prefs.js:70
 msgid "Unhide from search"
