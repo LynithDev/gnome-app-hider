@@ -1,0 +1,40 @@
+# Italian translation file
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-19 10:00+0200\n"
+"PO-Revision-Date: 2023-10-19 10:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: prefs.js:14
+msgid "No hidden apps"
+msgstr "Nessuna applicazione nascosta"
+
+#: prefs.js:40
+msgid "Missing app info"
+msgstr "Informazioni applicazione mancanti"
+
+#: prefs.js:54
+msgid "Unhide"
+msgstr "Nascondi"
+
+#: prefs.js:70
+msgid "Unhide from search"
+msgstr "Mostra nella ricerca"
+
+#: prefs.js:70
+msgid "Hide from search"
+msgstr "Nascondi dalla ricerca"
+
+#: patches/appMenuPatcher.js:26
+msgid "Hide"
+msgstr "Nascondi"
