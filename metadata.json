@@ -10,6 +10,7 @@
         "kofi": "lynith"
     },
     "shell-version": [
-        "45"
+        "45",
+        "46"
     ]
 }
