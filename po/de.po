@@ -26,7 +26,7 @@ msgstr "Keine App Informationen vorhanden"
 
 #: prefs.js:54
 msgid "Unhide"
-msgstr "Verbergen"
+msgstr "Anzeigen"
 
 #: prefs.js:70
 msgid "Unhide from search"
