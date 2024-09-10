@@ -1,0 +1,43 @@
+# Bulgarian translation file
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Iliya Iliev <iliq0000@proton.me>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-10 19:51+0300\n"
+"PO-Revision-Date: 2024-09-10 20:11+0300\n"
+"Last-Translator: Iliya Iliev <iliq0000@proton.me>\n"
+"Language-Team: Bulgarian\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 46.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: patches/appMenuPatcher.js:30
+msgid "Hide"
+msgstr "Скрий"
+
+#: prefs.js:14
+msgid "No hidden apps"
+msgstr "Няма скрити приложения"
+
+#: prefs.js:40
+msgid "Missing app info"
+msgstr "Лиспва информация за приложението"
+
+#: prefs.js:54
+msgid "Unhide"
+msgstr "Не крий"
+
+#: prefs.js:70
+msgid "Unhide from search"
+msgstr "Не крий при търсене"
+
+#: prefs.js:70
+msgid "Hide from search"
+msgstr "Скрий при търсене"
