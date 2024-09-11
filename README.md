@@ -36,6 +36,7 @@ Run the `pack.sh` script
 | 🇫🇷 French  | [gllmhyt](https://github.com/gllmhyt)         |
 | 🇷🇺 Russian | [Pavelikgr](https://github.com/Pavelikgr)     |
 | 🇩🇪 German  | [Pracium](https://github.com/Pracium)         |
+| 🇧🇬 Bulgarian | [iliqiliev](https://github.com/iliqiliev)   |
 
 From the root project directory, run the following command to generate a `.pot` file for translators to use. You can edit this file with POEditor or any other translation software.
 
