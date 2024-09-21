@@ -1,4 +1,4 @@
-import { AppDisplay, FolderView, AppSearchProvider } from "resource:///org/gnome/shell/ui/appDisplay.js";
+import { AppDisplay, FolderView, FolderIcon, AppSearchProvider } from "resource:///org/gnome/shell/ui/appDisplay.js";
 import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
 export class AppDisplayPatcher {
@@ -34,18 +34,46 @@ export class AppDisplayPatcher {
 
         AppDisplay.prototype._hider_originalLoadApps = AppDisplay.prototype._loadApps;
         AppDisplay.prototype._loadApps = function() {
-            return this._hider_originalLoadApps().map((app) => {
-                app._hider_displayPatchedMenu = true;
-                return app;
-            }).filter(app => !SETTINGS.get_strv("hidden-apps").includes(app.id));
+            return this._hider_originalLoadApps()
+                .map((app) => {
+                    app._hider_displayPatchedMenu = true;
+                    return app;
+                })
+                .filter(app => {
+                    return !SETTINGS.get_strv("hidden-apps").includes(app.id);
+                });
         }
 
         FolderView.prototype._hider_originalLoadApps = FolderView.prototype._loadApps;
         FolderView.prototype._loadApps = function() {
-            return this._hider_originalLoadApps().map((app) => {
-                app._hider_displayPatchedMenu = true;
-                return app;
-            }).filter(app => !SETTINGS.get_strv("hidden-apps").includes(app.id));
+            return this._hider_originalLoadApps()
+                .map((app) => {
+                    app._hider_displayPatchedMenu = true;
+                    app._hider_onHidden = () => {
+                        // console.log(Object.getPrototypeOf(this._folder), Object.getOwnPropertyNames(this._folder));
+                        this._folder.emit("changed", "apps");
+
+                        if (this._items.length === 0) {
+                            this._folder.emit("empty");
+                        }
+                    }
+                    return app;
+                })
+                .filter(app => {
+                    return !SETTINGS.get_strv("hidden-apps").includes(app.id);
+                });
+        }
+
+        FolderIcon.prototype._hider_originalGetAppIds = FolderIcon.prototype._getAppIds;
+        FolderIcon.prototype._getAppIds = function() {
+            const filtered = this._hider_originalGetAppIds()
+                .filter(app_id => {
+                    return !SETTINGS.get_strv("hidden-apps").includes(app_id);
+                });
+
+            console.log("Filtered AppIds", filtered);
+
+            return filtered;
         }
 
         Main.overview._overview.controls.appDisplay._redisplay();
@@ -57,6 +85,9 @@ export class AppDisplayPatcher {
 
         AppDisplay.prototype._loadApps = AppDisplay.prototype._hider_originalLoadApps;
         delete AppDisplay.prototype._hider_originalLoadApps;
+
+        FolderIcon.prototype._getAppIds = FolderIcon.prototype._hider_originalGetAppIds;
+        delete FolderIcon.prototype._hider_originalGetAppIds;
 
         Main.overview._overview.controls.appDisplay._redisplay();
     }
