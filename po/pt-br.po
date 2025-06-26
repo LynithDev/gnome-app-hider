@@ -1,0 +1,42 @@
+# Brazilian Portuguese translation file
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# CarvDev <arthurcarvlima@outlook.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-26 18:17-0300\n"
+"PO-Revision-Date:\n"
+"Last-Translator: CarvDev <arthurcarvlima@outlook.com>\n"
+"Language-Team: \n"
+"Language: pt-br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gnome Text Editor 48.2\n"
+
+#: prefs.js:14
+msgid "No hidden apps"
+msgstr "Não há aplicativos ocultos"
+
+#: prefs.js:40
+msgid "Missing app info"
+msgstr "Informações de aplicativo faltando"
+
+#: prefs.js:54
+msgid "Unhide"
+msgstr "Mostrar"
+
+#: prefs.js:70
+msgid "Unhide from search"
+msgstr "Mostrar na pesquisa"
+
+#: prefs.js:70
+msgid "Hide from search"
+msgstr "Ocultar na pesquisa"
+
+#: patches/appMenuPatcher.js:26
+msgid "Hide"
+msgstr "Ocultar"
