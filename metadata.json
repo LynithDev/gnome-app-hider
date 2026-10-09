@@ -4,7 +4,7 @@
     "uuid": "app-hider@lynith.dev",
     "settings-schema": "org.gnome.shell.extensions.app-hider",
     "gettext-domain": "app-hider@lynith.dev",
-    "version": 21,
+    "version": 22,
     "url": "https://github.com/LynithDev/gnome-app-hider",
     "donations": {
         "kofi": "lynith"
@@ -15,6 +15,7 @@
         "47",
         "48",
         "49",
-	"50"
+		"50",
+		"51"
     ]
 }
